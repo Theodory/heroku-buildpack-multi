@@ -1,13 +1,16 @@
-# Deprecated
+# GHOST SCRIPT BUILD PACK
 
-This project is deprecated and is no longer being maintained.
+### Go to settings build packs add ```https://github.com/Theodory/heroku-buildpack-ghostscript.git ```
 
-Please fork it to your own account and update your `BUILDPACK_URL`
+### OR
 
-You can also check out Heroku's [built-in buildpack-multi support](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app).
+### $ cd /path/to/your-app
 
-Cloud Foundry users, amongst others, may wish to use a community-maintained and
-actively developed version of this buildpack, available at
-https://bitbucket.org/cf-utilities/cf-buildpack-multi/
+### $ heroku buildpacks:add https://github.com/Theodory/heroku-buildpack-ghostscript.git
 
-Please check out my current project [Convox](https://convox.com) for all of your deployment needs!
+# Push changes to deploy
+$ git push
+
+# This version of ghostscript will end up deployed at /app/vendor/gs/bin/gs
+# So you may want to set an environment variable to let your app know where it is. e.g.
+$ heroku config:set GS_PATH=/app/vendor/gs/bin/gs
